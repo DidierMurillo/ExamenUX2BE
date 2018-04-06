@@ -1,7 +1,7 @@
 module Api::V1
   class ClimatesController < ApplicationController
     def index
-      @climates = Climate.all
+      @climates = Climate.order("created_at DESC")
       render json: @climates
     end
 
@@ -10,7 +10,7 @@ module Api::V1
   		render json: @climate
 	end
 	private
-	  def idea_params
+	  def cliamte_params
     	params.require(:climate).permit(:town,:temperature,:status)
   	end
 
