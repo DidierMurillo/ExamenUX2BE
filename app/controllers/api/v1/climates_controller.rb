@@ -8,9 +8,9 @@ module Api::V1
     def create
   		@climate = Climate.create(climate_params)
   		render json: @climate
-	end
+	  end
 	private
-	  def cliamte_params
+	  def climate_params
     	params.require(:climate).permit(:town,:temperature,:status)
   	end
 
